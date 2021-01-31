@@ -147,6 +147,34 @@ const Utils = {
   }
 }
 
+const Form = {
+  description: document.querySelector('input#description'),
+  amount: document.querySelector('input#amount'),
+  date: document.querySelector('input#date'),
+
+  getValues() {
+    return {
+      description: Form.descrption.value,
+      amount: Form.amount.value,
+      date: Form.date.value
+    }
+  },
+
+  formatData() {
+    console.log('formatar os dados')
+  },
+  validateFields() {
+    console.log('validar os campos')
+  },
+
+  submit(event) {
+    event.preventDefault()
+    
+    Form.validateFields()
+
+    //Form.formatData()
+}
+}
 
 const App = {
   init() {

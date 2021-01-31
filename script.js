@@ -154,25 +154,37 @@ const Form = {
 
   getValues() {
     return {
-      description: Form.descrption.value,
+      description: Form.description.value,
       amount: Form.amount.value,
       date: Form.date.value
     }
   },
 
-  formatData() {
-    console.log('formatar os dados')
-  },
   validateFields() {
-    console.log('validar os campos')
+    const { description, amount, date} = Form.getValues()
+
+    if(
+      description.trim() === "" || 
+      amount.trim() === "" || 
+      date.trim() === "") {
+        throw new Error("Por favor, preencha todos os campos")
+      }
   },
 
   submit(event) {
     event.preventDefault()
-    
-    Form.validateFields()
 
-    //Form.formatData()
+    try {
+      Form.validateFields()
+
+      
+
+    } catch (error) {
+      alert(error.message)
+    }
+    
+  
+
 }
 }
 

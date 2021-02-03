@@ -12,7 +12,6 @@ const Modal = {
     .classList.remove('active')
   }
 }
-
  
 
 const Transaction = {
@@ -181,7 +180,7 @@ const Form = {
     if(
       description.trim() === "" || 
       amount.trim() === "" || 
-      date.trim() === "") {
+      date.trim() === "" ) {
         throw new Error("Por favor, preencha todos os campos")
       }
   },
@@ -193,12 +192,11 @@ const Form = {
 
     date = Utils.formatDate(date)
 
-    return {
-
-      description,
-      amount,
-      date
-    }
+      return {
+        description,
+        amount,
+        date
+      }
   },
 
  clearFields(){
@@ -220,14 +218,13 @@ const Form = {
     Form.clearFields()
     Modal.close()
    
-
     } catch (error) {
       alert(error.message)
-    }
+        }
     
   
 
-}
+    }
 }
 
 const App = {

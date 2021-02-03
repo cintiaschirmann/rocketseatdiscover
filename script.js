@@ -13,33 +13,34 @@ const Modal = {
   }
 }
 
-const transactions = [
-  {
-    description: 'Luz',
-    amount: -50000,
-    date:'23/01/2021'
-},
-{
-  description: 'Website',
-  amount: 500000,
-  date:'23/01/2021'
-},
-{ 
-  description: 'Internet',
-  amount: -20000,
-  date:'23/01/2021'
-},
-
-{
-  description: 'App',
-  amount: 200000,
-  date:'23/01/2021'
-},
-]
-
+ 
 
 const Transaction = {
-  all: transactions,
+  all:[
+    {
+      description: 'Luz',
+      amount: -50000,
+      date:'23/01/2021'
+    },
+    {
+      description: 'Website',
+      amount: 500000,
+      date:'23/01/2021'
+    },
+    { 
+      description: 'Internet',
+      amount: -20000,
+      date:'23/01/2021'
+    },
+  
+    {
+      description: 'App',
+      amount: 200000,
+      date:'23/01/2021'
+    },
+  ],
+
+
   add(transaction){
     Transaction.all.push(transaction)
 
@@ -56,7 +57,7 @@ const Transaction = {
 
   incomes() {
     let income = 0;
-    transactions.forEach(transaction => {
+    Transaction.all.forEach(transaction => {
       if(transaction.amount > 0 ) {
         income += transaction.amount;
       }
@@ -67,7 +68,7 @@ const Transaction = {
 
   expenses() {
     let expense = 0;
-    transactions.forEach(transaction => {
+    Transaction.all.forEach(transaction => {
       if(transaction.amount < 0 ) {
         expense += transaction.amount;
       }
